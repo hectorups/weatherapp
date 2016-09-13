@@ -1,0 +1,26 @@
+<resources>
+  <string name="app_name">WeatherApp</string>
+
+  <!-- Selection Screen -->
+  <string name="sel_screen_city_prompt">Choose a city</string>
+  <string name="sel_screen_city_placeholder">e.g. San Francisco</string>
+  <string name="sel_screen_days_prompt">Days to forecast</string>
+  <string name="sel_screen_days_placeholder">Enter # days, from 1-10</string>
+  <string name="sel_screen_submit">Choose a city</string>
+  <string name="sel_screen_nocityvalidation">Please write something for city</string>
+  <string name="sel_screen_nocityerror">Couldn\'t find a city with that name</string>
+  <string name="sel_screen_networkerror">Error</string>
+
+
+  <!-- Weather Screen -->
+  <string name="weather">Weather</string>
+  <string name="temperature">Temperature</string>
+  <string name="high">Hight</string>
+  <string name="low">Low</string>
+  <string name="tab_title">Day %1$d</string>
+  <string name="celsius">%s°</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

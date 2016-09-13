@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+  compileSdkVersion 24
+  buildToolsVersion "24.0.2"
+
+  defaultConfig {
+    applicationId "com.example.hectormonserrate.weatherapp"
+    minSdkVersion 21
+    targetSdkVersion 24
+    versionCode 1
+    versionName "1.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+ext {
+  supportLibraryVersion = '24.2.0'
+  okhttp = '3.4.1'
+  retrofit = '2.1.0'
+  rxjava = '1.1.0'
+  supportTest = '0.5'
+  expresso = '2.2.2'
+  dagger = '2.6.1'
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+
+  compile "com.android.support:support-v4:$supportLibraryVersion"
+  compile "com.android.support:recyclerview-v7:$supportLibraryVersion"
+
+  apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+  compile "com.squareup.okhttp3:okhttp:${okhttp}"
+  compile "com.squareup.okhttp3:logging-interceptor:${okhttp}"
+  compile "com.squareup.retrofit2:retrofit:${retrofit}"
+  compile "com.squareup.retrofit2:adapter-rxjava:${retrofit}"
+  compile "com.squareup.retrofit2:converter-gson:${retrofit}"
+
+  compile "io.reactivex:rxandroid:${rxjava}"
+  compile "io.reactivex:rxjava:${rxjava}"
+
+  apt 'com.ryanharter.auto.value:auto-value-gson:0.4.2'
+  provided 'com.ryanharter.auto.value:auto-value-gson:0.4.2'
+  apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.4-rc2'
+
+
+  apt "com.google.dagger:dagger-compiler:${dagger}"
+  compile "com.google.dagger:dagger:${dagger}"
+  provided 'org.glassfish:javax.annotation:10.0-b28'
+
+  //Dependencies for JUNit and unit tests.
+  testCompile "junit:junit:4.12"
+  testCompile 'org.mockito:mockito-all:1.10.9'
+  testCompile 'com.google.truth:truth:0.30'
+  testCompile 'org.powermock:powermock-module-junit4:1.6.5'
+  testCompile 'org.powermock:powermock-api-mockito2:1.6.5'
+
+  //Dependencies for Espresso
+  androidTestCompile "com.squareup.okhttp3:mockwebserver:${okhttp}"
+  androidTestCompile 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
+  androidTestCompile "com.android.support:appcompat-v7:${supportLibraryVersion}"
+  androidTestCompile("com.android.support.test.espresso:espresso-core:${expresso}", {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  androidTestCompile("com.android.support.test:runner:${supportTest}") {
+    exclude module: 'support-annotations'
+    exclude module: 'support-v4'
+  }
+  androidTestCompile("com.android.support.test:rules:${supportTest}") {
+    exclude module: 'support-annotations'
+    exclude module: 'support-v4'
+  }
+  androidTestCompile("com.android.support.test.espresso:espresso-intents:${expresso}") {
+    exclude module: 'recyclerview-v7'
+    exclude module: 'support-annotations'
+    exclude module: 'support-v4'
+  }
+  androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.1') {
+    exclude module: 'recyclerview-v7'
+    exclude module: 'support-annotations'
+    exclude module: 'support-v4'
+  }
+  compile 'com.jakewharton:butterknife:8.4.0'
+  compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta1'
+  compile 'com.squareup.picasso:picasso:2.5.2'
+  compile 'com.android.support:support-v4:24.2.0'
+}
