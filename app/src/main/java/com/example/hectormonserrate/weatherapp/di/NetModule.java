@@ -11,6 +11,7 @@ import com.google.gson.GsonBuilder;
 import com.squareup.picasso.Picasso;
 import dagger.Module;
 import dagger.Provides;
+import java.util.concurrent.TimeUnit;
 import javax.inject.Singleton;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
@@ -44,6 +45,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
   @Provides @Singleton OkHttpClient provideOkHttpClient(Cache cache) {
 
     OkHttpClient.Builder builder = (new OkHttpClient()).newBuilder();
+
+    builder.connectTimeout(2, TimeUnit.SECONDS);
+    builder.readTimeout(20, TimeUnit.SECONDS);
+    builder.writeTimeout(30, TimeUnit.SECONDS);
 
     if (BuildConfig.DEBUG) {
       HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
