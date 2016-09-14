@@ -7,7 +7,8 @@
   <string name="sel_screen_days_prompt">Days to forecast</string>
   <string name="sel_screen_days_placeholder">Enter # days, from 1-10</string>
   <string name="sel_screen_submit">Choose a city</string>
-  <string name="sel_screen_nocityvalidation">Please write something for city</string>
+  <string name="sel_screen_nocityvalidation">Please enter city name</string>
+  <string name="sel_screen_nodaysvalidation">Please enter number of days</string>
   <string name="sel_screen_nocityerror">Couldn\'t find a city with that name</string>
   <string name="sel_screen_networkerror">Error</string>
 

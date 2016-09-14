@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 
 @AutoValue public abstract class ForecastInfo {
-  abstract public Simpleforecast simpleforecast();
+  abstract public Simpleforecas simpleforecast();
 
   public static TypeAdapter<ForecastInfo> typeAdapter(Gson gson) {
     return new AutoValue_ForecastInfo.GsonTypeAdapter(gson);

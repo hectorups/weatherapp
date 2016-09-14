@@ -4,9 +4,16 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,6 +22,7 @@ import com.example.hectormonserrate.weatherapp.R;
 import com.example.hectormonserrate.weatherapp.dto.Autocomplete;
 import com.example.hectormonserrate.weatherapp.dto.Forecast;
 import com.example.hectormonserrate.weatherapp.presenter.SelectionPresenter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SelectionActivity extends AppCompatActivity implements SelectionPresenter.Callback {
@@ -22,6 +30,7 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
   @BindView(R.id.btnSubmit) Button btnSubmit;
   @BindView(R.id.etCity) EditText etCity;
   @BindView(R.id.etDays) EditText etDays;
+  @BindView(R.id.pbLoading) ProgressBar pbLoading;
 
   private SelectionPresenter presenter;
 
@@ -32,17 +41,41 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
     ButterKnife.bind(this);
 
     presenter = new SelectionPresenter();
+
+    TextView.OnEditorActionListener listener = new TextView.OnEditorActionListener() {
+      @Override public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+        if (i == EditorInfo.IME_ACTION_DONE) {
+          onSubmit(btnSubmit);
+          return true;
+        } else if (i == EditorInfo.IME_ACTION_NEXT) {
+          etDays.requestFocus();
+          return true;
+        }
+
+        return false;
+      }
+    };
+
+    etDays.setFilters(new InputFilter[] { new DaysInputFilter() });
+    etDays.setOnEditorActionListener(listener);
+    etCity.setOnEditorActionListener(listener);
   }
 
   @OnClick(R.id.btnSubmit) public void onSubmit(View view) {
     String name = etCity.getText().toString();
+    String days = etDays.getText().toString();
 
-    if (name.isEmpty()) {
+    if (TextUtils.isEmpty(name)) {
       Toast.makeText(this, R.string.sel_screen_nocityvalidation, Toast.LENGTH_SHORT).show();
       return;
     }
 
-    btnSubmit.setEnabled(false);
+    if (TextUtils.isEmpty(days)) {
+      Toast.makeText(this, R.string.sel_screen_nodaysvalidation, Toast.LENGTH_SHORT).show();
+      return;
+    }
+
+    showLoading();
     presenter.resultsForQuery(etCity.getText().toString());
   }
 
@@ -50,6 +83,7 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
     super.onResume();
     btnSubmit.setEnabled(true);
     presenter.onAttach(this);
+    hideLoading();
   }
 
   @Override protected void onPause() {
@@ -60,20 +94,52 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
   @Override public void results(Pair<Autocomplete, List<Forecast>> results) {
     btnSubmit.setEnabled(true);
 
-    WeatherActivity.launch(this, results.first, results.second);
+    int total = Integer.parseInt(etDays.getText().toString());
+    List<Forecast> takeList = new ArrayList<>();
+    for (int i = 0; i < total; i++) {
+      takeList.add(results.second.get(i));
+    }
+
+    WeatherActivity.launch(this, results.first, takeList);
   }
 
   @Override public void showNetworkError() {
     Toast.makeText(this, R.string.sel_screen_networkerror, Toast.LENGTH_SHORT).show();
-    btnSubmit.setEnabled(true);
+    hideLoading();
   }
 
   @Override public void showNocityError() {
     Toast.makeText(this, R.string.sel_screen_nocityerror, Toast.LENGTH_SHORT).show();
+    hideLoading();
+  }
+
+  private void showLoading() {
+    btnSubmit.setEnabled(false);
+    pbLoading.setVisibility(View.VISIBLE);
+  }
+
+  private void hideLoading() {
     btnSubmit.setEnabled(true);
+    pbLoading.setVisibility(View.GONE);
   }
 
   @Override public Context getContext() {
     return this;
+  }
+
+  class DaysInputFilter implements InputFilter {
+
+    @Override
+    public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart,
+        int dend) {
+      try {
+        int input = Integer.parseInt(dest.toString() + source.toString());
+        if (input <= 10 && input > 0) {
+          return null;
+        }
+      } catch (NumberFormatException e) {
+      }
+      return "";
+    }
   }
 }

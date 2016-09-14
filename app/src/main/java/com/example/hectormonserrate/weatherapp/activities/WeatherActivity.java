@@ -50,6 +50,7 @@ public class WeatherActivity extends AppCompatActivity {
       autocomplete = savedInstanceState.getParcelable(AUTOCOMPLETE_EXTRA);
     }
 
+    setTitle(autocomplete.name());
     adapter = new WeatherDayAdapter(this, getSupportFragmentManager(), forecasts);
     vpPager.setAdapter(adapter);
   }
@@ -60,5 +61,4 @@ public class WeatherActivity extends AppCompatActivity {
     outState.putParcelableArrayList(FORECASTS_EXTRA, new ArrayList<Parcelable>(forecasts));
     outState.putParcelable(AUTOCOMPLETE_EXTRA, autocomplete);
   }
-
 }
