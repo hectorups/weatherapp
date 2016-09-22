@@ -27,13 +27,13 @@ public class WeatherActivity extends AppCompatActivity {
   private Autocomplete autocomplete;
   private FragmentPagerAdapter adapter;
 
-  public static void launch(@NonNull Context context, @NonNull Autocomplete autocomplete,
+  public static Intent buildIntent(@NonNull Context context, @NonNull Autocomplete autocomplete,
       @NonNull List<Forecast> forecasts) {
     Intent intent = new Intent(context, WeatherActivity.class);
     intent.putExtra(AUTOCOMPLETE_EXTRA, autocomplete);
     intent.putParcelableArrayListExtra(FORECASTS_EXTRA, new ArrayList<Parcelable>(forecasts));
 
-    context.startActivity(intent);
+    return intent;
   }
 
   @Override protected void onCreate(Bundle savedInstanceState) {

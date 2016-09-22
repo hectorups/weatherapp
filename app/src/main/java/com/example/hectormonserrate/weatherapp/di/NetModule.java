@@ -1,8 +1,9 @@
 package com.example.hectormonserrate.weatherapp.di;
 
-import android.app.Application;
+import android.content.Context;
 import com.example.hectormonserrate.weatherapp.BuildConfig;
 import com.example.hectormonserrate.weatherapp.api.AutocompleteService;
+import com.example.hectormonserrate.weatherapp.api.Endpoint;
 import com.example.hectormonserrate.weatherapp.api.WundergroundService;
 import com.example.hectormonserrate.weatherapp.dto.MyAdapterFactory;
 import com.example.hectormonserrate.weatherapp.repositories.ApiRepository;
@@ -12,6 +13,7 @@ import com.squareup.picasso.Picasso;
 import dagger.Module;
 import dagger.Provides;
 import java.util.concurrent.TimeUnit;
+import javax.inject.Named;
 import javax.inject.Singleton;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
@@ -22,23 +24,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module public class NetModule {
 
-  private String baseUrl;
-  private String baseUrl2;
-  private Application application;
+  private Context context;
 
-  public NetModule(Application application, String baseUrl, String baseUrl2) {
-    this.baseUrl = baseUrl;
-    this.baseUrl2 = baseUrl2;
-    this.application = application;
+  public NetModule(Context context) {
+    this.context = context;
   }
 
   @Provides @Singleton Cache provideOkHttpCache() {
     int cacheSize = 5 * 1024 * 1024;
-    return new Cache(application.getCacheDir(), cacheSize);
+    return new Cache(context.getCacheDir(), cacheSize);
   }
 
   @Provides @Singleton Picasso providePicasso() {
-    Picasso.Builder builder = new Picasso.Builder(application.getApplicationContext());
+    Picasso.Builder builder = new Picasso.Builder(context.getApplicationContext());
     return builder.build();
   }
 
@@ -63,24 +61,24 @@ import retrofit2.converter.gson.GsonConverterFactory;
     return new GsonBuilder().registerTypeAdapterFactory(MyAdapterFactory.create()).create();
   }
 
-  @Provides @Singleton WundergroundService provideWundergroundService(Gson gson,
-      OkHttpClient okHttpClient) {
+  @Provides @Singleton WundergroundService provideWundergroundService(
+      @Named("weather") Endpoint endpoint, Gson gson, OkHttpClient okHttpClient) {
     Retrofit retrofit =
         new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-            .baseUrl(baseUrl)
+            .baseUrl(endpoint.getUrl())
             .client(okHttpClient)
             .build();
 
     return retrofit.create(WundergroundService.class);
   }
 
-  @Provides @Singleton AutocompleteService provideAutocompleteService(Gson gson,
-      OkHttpClient okHttpClient) {
+  @Provides @Singleton AutocompleteService provideAutocompleteService(
+      @Named("autocomplete") Endpoint endpoint, Gson gson, OkHttpClient okHttpClient) {
     Retrofit retrofit =
         new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-            .baseUrl(baseUrl2)
+            .baseUrl(endpoint.getUrl())
             .client(okHttpClient)
             .build();
 

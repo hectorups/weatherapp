@@ -1,0 +1,220 @@
+{
+  "RESULTS": [
+    {
+      "name": "Zaragoza, Spain",
+      "type": "city",
+      "c": "ES",
+      "zmw": "00000.1.08160",
+      "tz": "Europe/Madrid",
+      "tzs": "CEST",
+      "l": "/q/zmw:00000.1.08160",
+      "ll": "41.669998 -1.020000",
+      "lat": "41.669998",
+      "lon": "-1.020000"
+    },
+    {
+      "name": "Zaragoza, Colombia",
+      "type": "city",
+      "c": "CO",
+      "zmw": "00000.36.80091",
+      "tz": "America/Bogota",
+      "tzs": "COT",
+      "l": "/q/zmw:00000.36.80091",
+      "ll": "7.494167 -74.871109",
+      "lat": "7.494167",
+      "lon": "-74.871109"
+    },
+    {
+      "name": "Zaragoza, El Salvador",
+      "type": "city",
+      "c": "SV",
+      "zmw": "00000.37.78663",
+      "tz": "America/El_Salvador",
+      "tzs": "CST",
+      "l": "/q/zmw:00000.37.78663",
+      "ll": "13.589444 -89.288887",
+      "lat": "13.589444",
+      "lon": "-89.288887"
+    },
+    {
+      "name": "Zaragoza, Guatemala",
+      "type": "city",
+      "c": "GT",
+      "zmw": "00000.76.78641",
+      "tz": "America/Guatemala",
+      "tzs": "CST",
+      "l": "/q/zmw:00000.76.78641",
+      "ll": "14.654445 -90.889442",
+      "lat": "14.654445",
+      "lon": "-90.889442"
+    },
+    {
+      "name": "Zaragoza, Philippines",
+      "type": "city",
+      "c": "PH",
+      "zmw": "00000.159.98325",
+      "tz": "Asia/Manila",
+      "tzs": "PHT",
+      "l": "/q/zmw:00000.159.98325",
+      "ll": "16.388332 119.943611",
+      "lat": "16.388332",
+      "lon": "119.943611"
+    },
+    {
+      "name": "Zaragoza de Guadalupe, Mexico",
+      "type": "city",
+      "c": "MX",
+      "zmw": "00000.60.76675",
+      "tz": "America/Mexico_City",
+      "tzs": "CDT",
+      "l": "/q/zmw:00000.60.76675",
+      "ll": "19.145834 -99.647224",
+      "lat": "19.145834",
+      "lon": "-99.647224"
+    },
+    {
+      "name": "Zaragoza, Mexico",
+      "type": "city",
+      "c": "MX",
+      "zmw": "00000.11.76641",
+      "tz": "America/Mexico_City",
+      "tzs": "CDT",
+      "l": "/q/zmw:00000.11.76641",
+      "ll": "21.283333 -97.716667",
+      "lat": "21.283333",
+      "lon": "-97.716667"
+    },
+    {
+      "name": "Zaragoza / Aeropuerto, Spain",
+      "type": "city",
+      "c": "SP",
+      "zmw": "00000.1.08160",
+      "tz": "ES1",
+      "l": "/q/locid:08160000;loctype:3",
+      "ll": "41.669998 -1.020000",
+      "lat": "41.669998",
+      "lon": "-1.020000"
+    },
+    {
+      "name": "Zaragoza Aero., Spain",
+      "type": "city",
+      "c": "SP",
+      "zmw": "00000.1.08160",
+      "tz": "ES1",
+      "l": "/q/locid:SPDW08160;loctype:6",
+      "ll": "41.669998 -1.020000",
+      "lat": "41.669998",
+      "lon": "-1.020000"
+    },
+    {
+      "name": "Zaragoza Centro, Spain",
+      "type": "city",
+      "c": "SP",
+      "zmw": "00000.8.08160",
+      "tz": "ES1",
+      "l": "/q/locid:SPXX5885;loctype:1",
+      "ll": "41.650002 -0.880000",
+      "lat": "41.650002",
+      "lon": "-0.880000"
+    },
+    {
+      "name": "Zaragoza de la Montana, Mexico",
+      "type": "city",
+      "c": "MX",
+      "zmw": "00000.8.76848",
+      "tz": "MX1",
+      "l": "/q/locid:MXCS1694;loctype:1",
+      "ll": "16.420000 -92.199997",
+      "lat": "16.420000",
+      "lon": "-92.199997"
+    },
+    {
+      "name": "Zaragoza Primera Seccion, Mexico",
+      "type": "city",
+      "c": "MX",
+      "zmw": "00000.10.WMM48",
+      "tz": "MX1",
+      "l": "/q/locid:MXCS1692;loctype:1",
+      "ll": "17.660000 -91.790001",
+      "lat": "17.660000",
+      "lon": "-91.790001"
+    },
+    {
+      "name": "Zaragoza Segunda Seccion, Mexico",
+      "type": "city",
+      "c": "MX",
+      "zmw": "92232.1.99999",
+      "tz": "MX3",
+      "l": "/q/locid:MXBN0750;loctype:1",
+      "ll": "32.599998 -115.529999",
+      "lat": "32.599998",
+      "lon": "-115.529999"
+    },
+    {
+      "name": "Zaragoza Tercera Seccion, Mexico",
+      "type": "city",
+      "c": "MX",
+      "zmw": "00000.13.76744",
+      "tz": "MX1",
+      "l": "/q/locid:MXTO1351;loctype:1",
+      "ll": "18.379999 -93.330002",
+      "lat": "18.379999",
+      "lon": "-93.330002"
+    },
+    {
+      "name": "Zaragoza, Costa Rica",
+      "type": "city",
+      "c": "CS",
+      "zmw": "00000.20.78762",
+      "tz": "CR1",
+      "l": "/q/locid:CSXX0410;loctype:1",
+      "ll": "10.040000 -84.430000",
+      "lat": "10.040000",
+      "lon": "-84.430000"
+    },
+    {
+      "name": "Zaragoza, Cuba",
+      "type": "city",
+      "c": "CU",
+      "zmw": "00000.3.78346",
+      "tz": "CU1",
+      "l": "/q/locid:CUXX1293;loctype:1",
+      "ll": "21.870001 -78.820000",
+      "lat": "21.870001",
+      "lon": "-78.820000"
+    },
+    {
+      "name": "Zaragoza, Equatorial Guinea",
+      "type": "city",
+      "c": "EK",
+      "zmw": "00000.1.64810",
+      "tz": "GQ1",
+      "l": "/q/locid:EKXX0043;loctype:1",
+      "ll": "3.720000 8.750000",
+      "lat": "3.720000",
+      "lon": "8.750000"
+    },
+    {
+      "name": "Zaragoza, Nicaragua",
+      "type": "city",
+      "c": "NU",
+      "zmw": "00000.1.78731",
+      "tz": "NI1",
+      "l": "/q/locid:NUXX2522;loctype:1",
+      "ll": "11.710000 -85.860001",
+      "lat": "11.710000",
+      "lon": "-85.860001"
+    },
+    {
+      "name": "Zaragoza, VE",
+      "type": "city",
+      "c": "VE",
+      "zmw": "00000.6.80465",
+      "tz": "VE1",
+      "l": "/q/locid:VETH0697;loctype:1",
+      "ll": "7.920000 -72.230003",
+      "lat": "7.920000",
+      "lon": "-72.230003"
+    }
+  ]
+}

@@ -1,10 +1,7 @@
 package com.example.hectormonserrate.weatherapp.presenter;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.util.Pair;
-import android.util.Log;
-import com.example.hectormonserrate.weatherapp.di.Injector;
 import com.example.hectormonserrate.weatherapp.dto.Autocomplete;
 import com.example.hectormonserrate.weatherapp.dto.Forecast;
 import com.example.hectormonserrate.weatherapp.repositories.ApiRepository;
@@ -15,10 +12,11 @@ import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
+import timber.log.Timber;
 
 public class SelectionPresenter extends BaseRxPresenter<SelectionPresenter.Callback> {
 
-  @Inject ApiRepository apiRepository;
+  private ApiRepository apiRepository;
 
   public interface Callback {
     void showNocityError();
@@ -26,13 +24,10 @@ public class SelectionPresenter extends BaseRxPresenter<SelectionPresenter.Callb
     void showNetworkError();
 
     void results(Pair<Autocomplete, List<Forecast>> results);
-
-    Context getContext();
   }
 
-  @Override public void onAttach(@NonNull Callback view) {
-    super.onAttach(view);
-    Injector.obtainNetComponent(view.getContext()).inject(this);
+  @Inject public SelectionPresenter(@NonNull ApiRepository apiRepository) {
+    this.apiRepository = apiRepository;
   }
 
   public void resultsForQuery(@NonNull String query) {
@@ -45,11 +40,12 @@ public class SelectionPresenter extends BaseRxPresenter<SelectionPresenter.Callb
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(new Action1<Pair<Autocomplete, List<Forecast>>>() {
           @Override public void call(Pair<Autocomplete, List<Forecast>> autocompleteListPair) {
+            Timber.d(autocompleteListPair.first.name());
             getView().results(autocompleteListPair);
           }
         }, new Action1<Throwable>() {
           @Override public void call(Throwable throwable) {
-            Log.e("asdf", throwable.toString());
+            Timber.e(throwable.toString());
 
             if (throwable instanceof NoResultsException) {
               getView().showNocityError();

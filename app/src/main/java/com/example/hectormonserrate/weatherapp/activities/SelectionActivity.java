@@ -1,7 +1,8 @@
 package com.example.hectormonserrate.weatherapp.activities;
 
-import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
@@ -14,11 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.example.hectormonserrate.weatherapp.R;
+import com.example.hectormonserrate.weatherapp.di.Injector;
 import com.example.hectormonserrate.weatherapp.dto.Autocomplete;
 import com.example.hectormonserrate.weatherapp.dto.Forecast;
 import com.example.hectormonserrate.weatherapp.presenter.SelectionPresenter;
@@ -31,6 +32,7 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
   @BindView(R.id.etCity) EditText etCity;
   @BindView(R.id.etDays) EditText etDays;
   @BindView(R.id.pbLoading) ProgressBar pbLoading;
+  @BindView(R.id.coordinatorLayout) CoordinatorLayout coordinatorLayout;
 
   private SelectionPresenter presenter;
 
@@ -40,7 +42,7 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
 
     ButterKnife.bind(this);
 
-    presenter = new SelectionPresenter();
+    presenter = new SelectionPresenter(Injector.obtainNetComponent(this).apiRepository());
 
     TextView.OnEditorActionListener listener = new TextView.OnEditorActionListener() {
       @Override public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
@@ -66,12 +68,14 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
     String days = etDays.getText().toString();
 
     if (TextUtils.isEmpty(name)) {
-      Toast.makeText(this, R.string.sel_screen_nocityvalidation, Toast.LENGTH_SHORT).show();
+      Snackbar.make(coordinatorLayout, R.string.sel_screen_nocityvalidation, Snackbar.LENGTH_SHORT)
+          .show();
       return;
     }
 
     if (TextUtils.isEmpty(days)) {
-      Toast.makeText(this, R.string.sel_screen_nodaysvalidation, Toast.LENGTH_SHORT).show();
+      Snackbar.make(coordinatorLayout, R.string.sel_screen_nodaysvalidation, Snackbar.LENGTH_SHORT)
+          .show();
       return;
     }
 
@@ -100,16 +104,17 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
       takeList.add(results.second.get(i));
     }
 
-    WeatherActivity.launch(this, results.first, takeList);
+    startActivity(WeatherActivity.buildIntent(this, results.first, takeList));
   }
 
   @Override public void showNetworkError() {
-    Toast.makeText(this, R.string.sel_screen_networkerror, Toast.LENGTH_SHORT).show();
+    Snackbar.make(coordinatorLayout, R.string.sel_screen_networkerror, Snackbar.LENGTH_SHORT)
+        .show();
     hideLoading();
   }
 
   @Override public void showNocityError() {
-    Toast.makeText(this, R.string.sel_screen_nocityerror, Toast.LENGTH_SHORT).show();
+    Snackbar.make(coordinatorLayout, R.string.sel_screen_nocityerror, Snackbar.LENGTH_SHORT).show();
     hideLoading();
   }
 
@@ -121,10 +126,6 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
   private void hideLoading() {
     btnSubmit.setEnabled(true);
     pbLoading.setVisibility(View.GONE);
-  }
-
-  @Override public Context getContext() {
-    return this;
   }
 
   class DaysInputFilter implements InputFilter {

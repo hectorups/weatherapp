@@ -1,0 +1,959 @@
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "forecast10day": 1
+  }
+  }
+    ,
+  "forecast":{
+    "txt_forecast": {
+    "date":"4:11 PM CEST",
+    "forecastday": [
+    {
+    "period":0,
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "title":"Tuesday",
+    "fcttext":"Partly cloudy. Lows overnight in the mid 50s.",
+    "fcttext_metric":"Partly cloudy. Low 13C.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":1,
+    "icon":"nt_partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+    "title":"Tuesday Night",
+    "fcttext":"Some clouds this evening will give way to mainly clear skies overnight. Low 56F. Winds WNW at 10 to 20 mph.",
+    "fcttext_metric":"Some clouds this evening will give way to mainly clear skies overnight. Low 13C. Winds WNW at 15 to 30 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":2,
+    "icon":"clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/clear.gif",
+    "title":"Wednesday",
+    "fcttext":"Sunny skies. High 81F. Winds NW at 5 to 10 mph.",
+    "fcttext_metric":"Sunny. High 27C. Winds NW at 10 to 15 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":3,
+    "icon":"nt_clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_clear.gif",
+    "title":"Wednesday Night",
+    "fcttext":"Clear skies. Low 59F. Winds SW at 5 to 10 mph.",
+    "fcttext_metric":"A mostly clear sky. Low near 15C. Winds SW at 10 to 15 km/h.",
+    "pop":"0"
+    }
+    ,
+    {
+    "period":4,
+    "icon":"clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/clear.gif",
+    "title":"Thursday",
+    "fcttext":"Sunny. High around 85F. Winds ESE at 5 to 10 mph.",
+    "fcttext_metric":"Sunny skies. High near 30C. Winds ESE at 10 to 15 km/h.",
+    "pop":"0"
+    }
+    ,
+    {
+    "period":5,
+    "icon":"nt_chancetstorms",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
+    "title":"Thursday Night",
+    "fcttext":"Becoming partly cloudy with isolated thunderstorms developing overnight. Low 64F. ESE winds shifting to NNW at 10 to 15 mph. Chance of rain 30%.",
+    "fcttext_metric":"Clear skies during the evening followed by isolated thunderstorms overnight. Low 18C. ESE winds shifting to NNW at 15 to 25 km/h. Chance of rain 30%.",
+    "pop":"30"
+    }
+    ,
+    {
+    "period":6,
+    "icon":"cloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/cloudy.gif",
+    "title":"Friday",
+    "fcttext":"Cloudy. High 79F. Winds NW at 5 to 10 mph.",
+    "fcttext_metric":"Cloudy. High 26C. Winds NW at 10 to 15 km/h.",
+    "pop":"20"
+    }
+    ,
+    {
+    "period":7,
+    "icon":"nt_partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+    "title":"Friday Night",
+    "fcttext":"A few clouds. Low 61F. Winds SE at 5 to 10 mph.",
+    "fcttext_metric":"A few clouds. Low 16C. Winds SE at 10 to 15 km/h.",
+    "pop":"20"
+    }
+    ,
+    {
+    "period":8,
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "title":"Saturday",
+    "fcttext":"Partly cloudy. High 84F. Winds SE at 10 to 15 mph.",
+    "fcttext_metric":"Partly cloudy. High 29C. Winds SE at 10 to 15 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":9,
+    "icon":"nt_partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+    "title":"Saturday Night",
+    "fcttext":"Partly cloudy skies. Low 62F. Winds SE at 10 to 15 mph.",
+    "fcttext_metric":"A few clouds from time to time. Low 17C. Winds SE at 15 to 25 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":10,
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "title":"Sunday",
+    "fcttext":"Intervals of clouds and sunshine. High 82F. E winds shifting to NNW at 10 to 15 mph.",
+    "fcttext_metric":"Intervals of clouds and sunshine. High 28C. Winds N at 10 to 15 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":11,
+    "icon":"nt_partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+    "title":"Sunday Night",
+    "fcttext":"Considerable clouds early. Some decrease in clouds late. Low 59F. Winds WNW at 10 to 20 mph.",
+    "fcttext_metric":"Partly to mostly cloudy. Low near 15C. Winds WNW at 15 to 30 km/h.",
+    "pop":"20"
+    }
+    ,
+    {
+    "period":12,
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "title":"Monday",
+    "fcttext":"Sunshine and clouds mixed. High 71F. Winds NW at 15 to 25 mph.",
+    "fcttext_metric":"Sunshine and clouds mixed. High 22C. Winds NW at 25 to 40 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":13,
+    "icon":"nt_partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+    "title":"Monday Night",
+    "fcttext":"Partly cloudy skies. Low 54F. Winds WNW at 15 to 25 mph.",
+    "fcttext_metric":"Some clouds early will give way to generally clear conditions overnight. Low 12C. Winds WNW at 25 to 40 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":14,
+    "icon":"clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/clear.gif",
+    "title":"Tuesday",
+    "fcttext":"Mainly sunny. High 76F. Winds NW at 15 to 25 mph.",
+    "fcttext_metric":"Mainly sunny. High 24C. Winds NW at 25 to 40 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":15,
+    "icon":"nt_clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_clear.gif",
+    "title":"Tuesday Night",
+    "fcttext":"A few clouds from time to time. Low 58F. Winds WNW at 15 to 25 mph.",
+    "fcttext_metric":"A few clouds from time to time. Low 14C. Winds WNW at 15 to 30 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":16,
+    "icon":"clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/clear.gif",
+    "title":"Wednesday",
+    "fcttext":"Mostly sunny skies. High 81F. Winds NW at 10 to 20 mph.",
+    "fcttext_metric":"A few clouds from time to time. High 27C. Winds NW at 15 to 30 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":17,
+    "icon":"nt_clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_clear.gif",
+    "title":"Wednesday Night",
+    "fcttext":"Generally fair. Low around 60F. Winds WNW at 10 to 20 mph.",
+    "fcttext_metric":"Mainly clear skies. Low around 15C. Winds WNW at 15 to 30 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":18,
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "title":"Thursday",
+    "fcttext":"Partly cloudy skies. High 79F. Winds WNW at 10 to 20 mph.",
+    "fcttext_metric":"Partly cloudy skies. High 26C. Winds WNW at 15 to 30 km/h.",
+    "pop":"10"
+    }
+    ,
+    {
+    "period":19,
+    "icon":"nt_clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/nt_clear.gif",
+    "title":"Thursday Night",
+    "fcttext":"Clear skies. Low 58F. Winds WNW at 10 to 20 mph.",
+    "fcttext_metric":"Clear. Low near 15C. Winds WNW at 15 to 30 km/h.",
+    "pop":"20"
+    }
+    ]
+    },
+    "simpleforecast": {
+    "forecastday": [
+    {"date":{
+  "epoch":"1474390800",
+  "pretty":"7:00 PM CEST on September 20, 2016",
+  "day":20,
+  "month":9,
+  "year":2016,
+  "yday":263,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Tue",
+  "weekday":"Tuesday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":1,
+    "high": {
+    "fahrenheit":"75",
+    "celsius":"23"
+    },
+    "low": {
+    "fahrenheit":"56",
+    "celsius":"13"
+    },
+    "conditions":"Partly Cloudy",
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "skyicon":"",
+    "pop":10,
+    "qpf_allday": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": null,
+    "mm": null
+    },
+    "qpf_night": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": null,
+    "cm": null
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 20,
+    "kph": 32,
+    "dir": "West",
+    "degrees": 0
+    },
+    "avewind": {
+    "mph": 13,
+    "kph": 21,
+    "dir": "WNW",
+    "degrees": 0
+    },
+    "avehumidity": 65,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ,
+    {"date":{
+  "epoch":"1474477200",
+  "pretty":"7:00 PM CEST on September 21, 2016",
+  "day":21,
+  "month":9,
+  "year":2016,
+  "yday":264,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Wed",
+  "weekday":"Wednesday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":2,
+    "high": {
+    "fahrenheit":"81",
+    "celsius":"27"
+    },
+    "low": {
+    "fahrenheit":"59",
+    "celsius":"15"
+    },
+    "conditions":"Clear",
+    "icon":"clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/clear.gif",
+    "skyicon":"",
+    "pop":10,
+    "qpf_allday": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_night": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 10,
+    "kph": 16,
+    "dir": "NW",
+    "degrees": 312
+    },
+    "avewind": {
+    "mph": 7,
+    "kph": 11,
+    "dir": "NW",
+    "degrees": 312
+    },
+    "avehumidity": 57,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ,
+    {"date":{
+  "epoch":"1474563600",
+  "pretty":"7:00 PM CEST on September 22, 2016",
+  "day":22,
+  "month":9,
+  "year":2016,
+  "yday":265,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Thu",
+  "weekday":"Thursday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":3,
+    "high": {
+    "fahrenheit":"85",
+    "celsius":"29"
+    },
+    "low": {
+    "fahrenheit":"64",
+    "celsius":"18"
+    },
+    "conditions":"Clear",
+    "icon":"clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/clear.gif",
+    "skyicon":"",
+    "pop":0,
+    "qpf_allday": {
+    "in": 0.01,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_night": {
+    "in": 0.01,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 10,
+    "kph": 16,
+    "dir": "ESE",
+    "degrees": 112
+    },
+    "avewind": {
+    "mph": 9,
+    "kph": 14,
+    "dir": "ESE",
+    "degrees": 112
+    },
+    "avehumidity": 52,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ,
+    {"date":{
+  "epoch":"1474650000",
+  "pretty":"7:00 PM CEST on September 23, 2016",
+  "day":23,
+  "month":9,
+  "year":2016,
+  "yday":266,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Fri",
+  "weekday":"Friday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":4,
+    "high": {
+    "fahrenheit":"79",
+    "celsius":"26"
+    },
+    "low": {
+    "fahrenheit":"61",
+    "celsius":"16"
+    },
+    "conditions":"Overcast",
+    "icon":"cloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/cloudy.gif",
+    "skyicon":"",
+    "pop":20,
+    "qpf_allday": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_night": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 10,
+    "kph": 16,
+    "dir": "NW",
+    "degrees": 306
+    },
+    "avewind": {
+    "mph": 9,
+    "kph": 14,
+    "dir": "NW",
+    "degrees": 306
+    },
+    "avehumidity": 70,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ,
+    {"date":{
+  "epoch":"1474736400",
+  "pretty":"7:00 PM CEST on September 24, 2016",
+  "day":24,
+  "month":9,
+  "year":2016,
+  "yday":267,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Sat",
+  "weekday":"Saturday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":5,
+    "high": {
+    "fahrenheit":"84",
+    "celsius":"29"
+    },
+    "low": {
+    "fahrenheit":"62",
+    "celsius":"17"
+    },
+    "conditions":"Partly Cloudy",
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "skyicon":"",
+    "pop":10,
+    "qpf_allday": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_night": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 15,
+    "kph": 24,
+    "dir": "SE",
+    "degrees": 124
+    },
+    "avewind": {
+    "mph": 10,
+    "kph": 16,
+    "dir": "SE",
+    "degrees": 124
+    },
+    "avehumidity": 64,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ,
+    {"date":{
+  "epoch":"1474822800",
+  "pretty":"7:00 PM CEST on September 25, 2016",
+  "day":25,
+  "month":9,
+  "year":2016,
+  "yday":268,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Sun",
+  "weekday":"Sunday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":6,
+    "high": {
+    "fahrenheit":"82",
+    "celsius":"28"
+    },
+    "low": {
+    "fahrenheit":"59",
+    "celsius":"15"
+    },
+    "conditions":"Partly Cloudy",
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "skyicon":"",
+    "pop":10,
+    "qpf_allday": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_night": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 15,
+    "kph": 24,
+    "dir": "N",
+    "degrees": 3
+    },
+    "avewind": {
+    "mph": 10,
+    "kph": 16,
+    "dir": "N",
+    "degrees": 3
+    },
+    "avehumidity": 58,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ,
+    {"date":{
+  "epoch":"1474909200",
+  "pretty":"7:00 PM CEST on September 26, 2016",
+  "day":26,
+  "month":9,
+  "year":2016,
+  "yday":269,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Mon",
+  "weekday":"Monday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":7,
+    "high": {
+    "fahrenheit":"71",
+    "celsius":"22"
+    },
+    "low": {
+    "fahrenheit":"54",
+    "celsius":"12"
+    },
+    "conditions":"Partly Cloudy",
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "skyicon":"",
+    "pop":10,
+    "qpf_allday": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_night": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 25,
+    "kph": 40,
+    "dir": "NW",
+    "degrees": 310
+    },
+    "avewind": {
+    "mph": 19,
+    "kph": 31,
+    "dir": "NW",
+    "degrees": 310
+    },
+    "avehumidity": 57,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ,
+    {"date":{
+  "epoch":"1474995600",
+  "pretty":"7:00 PM CEST on September 27, 2016",
+  "day":27,
+  "month":9,
+  "year":2016,
+  "yday":270,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Tue",
+  "weekday":"Tuesday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":8,
+    "high": {
+    "fahrenheit":"76",
+    "celsius":"24"
+    },
+    "low": {
+    "fahrenheit":"58",
+    "celsius":"14"
+    },
+    "conditions":"Clear",
+    "icon":"clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/clear.gif",
+    "skyicon":"",
+    "pop":10,
+    "qpf_allday": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_night": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 25,
+    "kph": 40,
+    "dir": "NW",
+    "degrees": 312
+    },
+    "avewind": {
+    "mph": 18,
+    "kph": 29,
+    "dir": "NW",
+    "degrees": 312
+    },
+    "avehumidity": 48,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ,
+    {"date":{
+  "epoch":"1475082000",
+  "pretty":"7:00 PM CEST on September 28, 2016",
+  "day":28,
+  "month":9,
+  "year":2016,
+  "yday":271,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Wed",
+  "weekday":"Wednesday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":9,
+    "high": {
+    "fahrenheit":"81",
+    "celsius":"27"
+    },
+    "low": {
+    "fahrenheit":"60",
+    "celsius":"16"
+    },
+    "conditions":"Clear",
+    "icon":"clear",
+    "icon_url":"http://icons.wxug.com/i/c/k/clear.gif",
+    "skyicon":"",
+    "pop":10,
+    "qpf_allday": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_night": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 20,
+    "kph": 32,
+    "dir": "NW",
+    "degrees": 309
+    },
+    "avewind": {
+    "mph": 16,
+    "kph": 26,
+    "dir": "NW",
+    "degrees": 309
+    },
+    "avehumidity": 44,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ,
+    {"date":{
+  "epoch":"1475168400",
+  "pretty":"7:00 PM CEST on September 29, 2016",
+  "day":29,
+  "month":9,
+  "year":2016,
+  "yday":272,
+  "hour":19,
+  "min":"00",
+  "sec":0,
+  "isdst":"1",
+  "monthname":"September",
+  "monthname_short":"Sep",
+  "weekday_short":"Thu",
+  "weekday":"Thursday",
+  "ampm":"PM",
+  "tz_short":"CEST",
+  "tz_long":"Europe/Madrid"
+},
+    "period":10,
+    "high": {
+    "fahrenheit":"79",
+    "celsius":"26"
+    },
+    "low": {
+    "fahrenheit":"58",
+    "celsius":"14"
+    },
+    "conditions":"Partly Cloudy",
+    "icon":"partlycloudy",
+    "icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+    "skyicon":"",
+    "pop":10,
+    "qpf_allday": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_day": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "qpf_night": {
+    "in": 0.00,
+    "mm": 0
+    },
+    "snow_allday": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_day": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "snow_night": {
+    "in": 0.0,
+    "cm": 0.0
+    },
+    "maxwind": {
+    "mph": 20,
+    "kph": 32,
+    "dir": "WNW",
+    "degrees": 302
+    },
+    "avewind": {
+    "mph": 15,
+    "kph": 24,
+    "dir": "WNW",
+    "degrees": 302
+    },
+    "avehumidity": 54,
+    "maxhumidity": 0,
+    "minhumidity": 0
+    }
+    ]
+    }
+  }
+}

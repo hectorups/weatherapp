@@ -9,6 +9,7 @@ import com.example.hectormonserrate.weatherapp.dto.AutocompleteRes;
 import com.example.hectormonserrate.weatherapp.dto.Forecast;
 import com.example.hectormonserrate.weatherapp.dto.ForecastRes;
 import java.util.List;
+import javax.inject.Inject;
 import rx.Observable;
 import rx.functions.Func1;
 import rx.functions.Func2;
@@ -18,7 +19,7 @@ public class ApiRepository {
   private final WundergroundService wundergroundService;
   private final AutocompleteService autocompleteService;
 
-  public ApiRepository(@NonNull final WundergroundService wundergroundService,
+  @Inject public ApiRepository(@NonNull final WundergroundService wundergroundService,
       @NonNull final AutocompleteService autocompleteService) {
     this.wundergroundService = wundergroundService;
     this.autocompleteService = autocompleteService;

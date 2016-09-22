@@ -21,7 +21,9 @@ android {
     targetSdkVersion 24
     versionCode 1
     versionName "1.0"
+    testInstrumentationRunner "com.example.hectormonserrate.weatherapp.runner.WeatherTestRunner"
   }
+
   buildTypes {
     release {
       minifyEnabled false
@@ -34,71 +36,89 @@ android {
     abortOnError false
   }
 
+  sourceSets {
+    test {
+      java.srcDirs += "$projectDir/src/sharedTest"
+    }
+
+    androidTest {
+      java.srcDirs += "$projectDir/src/sharedTest"
+    }
+  }
 }
 
 ext {
-  supportLibraryVersion = '24.2.0'
+  supportLibraryVersion = '24.2.1'
   okhttp = '3.4.1'
   retrofit = '2.1.0'
   rxjava = '1.1.0'
   supportTest = '0.5'
-  expresso = '2.2.2'
+  espresso = '2.2.2'
   dagger = '2.6.1'
+  butterknife = '8.4.0'
+  dexmakerVersion = 'f8e7c23e4172af8767758c99c9165dd2bd4f0e7f'
+  truth = '0.30'
 }
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   compile "com.android.support:appcompat-v7:$supportLibraryVersion"
-
+  compile "com.android.support:design:$supportLibraryVersion"
   compile "com.android.support:support-v4:$supportLibraryVersion"
   compile "com.android.support:recyclerview-v7:$supportLibraryVersion"
 
-  apt 'com.jakewharton:butterknife-compiler:8.4.0'
 
-  compile "com.squareup.okhttp3:okhttp:${okhttp}"
-  compile "com.squareup.okhttp3:logging-interceptor:${okhttp}"
-  compile "com.squareup.retrofit2:retrofit:${retrofit}"
-  compile "com.squareup.retrofit2:adapter-rxjava:${retrofit}"
-  compile "com.squareup.retrofit2:converter-gson:${retrofit}"
 
-  compile "io.reactivex:rxandroid:${rxjava}"
-  compile "io.reactivex:rxjava:${rxjava}"
+  compile "com.squareup.okhttp3:okhttp:$okhttp"
+  compile "com.squareup.okhttp3:logging-interceptor:$okhttp"
+  compile "com.squareup.retrofit2:retrofit:$retrofit"
+  compile "com.squareup.retrofit2:adapter-rxjava:$retrofit"
+  compile "com.squareup.retrofit2:converter-gson:$retrofit"
+
+  compile "io.reactivex:rxandroid:$rxjava"
+  compile "io.reactivex:rxjava:$rxjava"
 
   apt 'com.ryanharter.auto.value:auto-value-gson:0.4.2'
   provided 'com.ryanharter.auto.value:auto-value-gson:0.4.2'
   apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.4-rc2'
 
 
-  apt "com.google.dagger:dagger-compiler:${dagger}"
-  compile "com.google.dagger:dagger:${dagger}"
+  apt "com.google.dagger:dagger-compiler:$dagger"
+  compile "com.google.dagger:dagger:$dagger"
   provided 'org.glassfish:javax.annotation:10.0-b28'
 
-  compile 'com.jakewharton:butterknife:8.4.0'
+  compile "com.jakewharton:butterknife:$butterknife"
+  apt "com.jakewharton:butterknife-compiler:$butterknife"
   compile 'com.squareup.picasso:picasso:2.5.2'
+
+  compile 'com.jakewharton.timber:timber:4.3.1'
 
   //Dependencies for JUNit and unit tests.
   testCompile "junit:junit:4.12"
-  testCompile 'org.mockito:mockito-all:1.10.9'
-  testCompile 'com.google.truth:truth:0.30'
+  testCompile 'org.mockito:mockito-core:1.10.19'
+  testCompile "com.google.truth:truth:$truth"
   testCompile 'org.powermock:powermock-module-junit4:1.6.5'
   testCompile 'org.powermock:powermock-api-mockito2:1.6.5'
+  testCompile 'com.github.fabioCollini:DaggerMock:0.6.2'
 
   //Dependencies for Espresso
-  androidTestCompile "com.squareup.okhttp3:mockwebserver:${okhttp}"
+  androidTestApt 'com.google.dagger:dagger-compiler:2.6.1'
+  androidTestCompile "com.squareup.okhttp3:mockwebserver:$okhttp"
   androidTestCompile 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
-  androidTestCompile "com.android.support:appcompat-v7:${supportLibraryVersion}"
-  androidTestCompile("com.android.support.test.espresso:espresso-core:${expresso}", {
+  androidTestCompile "com.android.support:appcompat-v7:$supportLibraryVersion"
+  androidTestCompile 'org.mockito:mockito-core:1.10.19'
+  androidTestCompile("com.android.support.test.espresso:espresso-core:$espresso", {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  androidTestCompile("com.android.support.test:runner:${supportTest}") {
+  androidTestCompile("com.android.support.test:runner:$supportTest") {
     exclude module: 'support-annotations'
     exclude module: 'support-v4'
   }
-  androidTestCompile("com.android.support.test:rules:${supportTest}") {
+  androidTestCompile("com.android.support.test:rules:$supportTest") {
     exclude module: 'support-annotations'
     exclude module: 'support-v4'
   }
-  androidTestCompile("com.android.support.test.espresso:espresso-intents:${expresso}") {
+  androidTestCompile("com.android.support.test.espresso:espresso-intents:$espresso") {
     exclude module: 'recyclerview-v7'
     exclude module: 'support-annotations'
     exclude module: 'support-v4'
