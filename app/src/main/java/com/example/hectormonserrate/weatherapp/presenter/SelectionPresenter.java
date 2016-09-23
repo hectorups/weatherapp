@@ -41,11 +41,17 @@ public class SelectionPresenter extends BaseRxPresenter<SelectionPresenter.Callb
         .subscribe(new Action1<Pair<Autocomplete, List<Forecast>>>() {
           @Override public void call(Pair<Autocomplete, List<Forecast>> autocompleteListPair) {
             Timber.d(autocompleteListPair.first.name());
-            getView().results(autocompleteListPair);
+            if (getView() != null) {
+              getView().results(autocompleteListPair);
+            }
           }
         }, new Action1<Throwable>() {
           @Override public void call(Throwable throwable) {
             Timber.e(throwable.toString());
+
+            if (getView() == null) {
+              return;
+            }
 
             if (throwable instanceof NoResultsException) {
               getView().showNocityError();

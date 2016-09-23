@@ -1,10 +1,11 @@
 package com.example.hectormonserrate.weatherapp.presenter;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import rx.subscriptions.CompositeSubscription;
 
 public abstract class BaseRxPresenter<T> {
-  private T view;
+  @Nullable private T view;
   private final CompositeSubscription subscriptions;
 
   public BaseRxPresenter() {
@@ -15,7 +16,7 @@ public abstract class BaseRxPresenter<T> {
     return subscriptions;
   }
 
-  final public T getView() {
+  final public @Nullable T getView() {
     return view;
   }
 
