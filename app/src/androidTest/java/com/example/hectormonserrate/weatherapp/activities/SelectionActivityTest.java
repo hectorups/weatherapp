@@ -141,6 +141,9 @@ import static org.hamcrest.Matchers.allOf;
 
   @After public void tearDown() throws Exception {
     Intents.release();
+    for (IdlingResource r : Espresso.getIdlingResources()) {
+      Espresso.unregisterIdlingResources(r);
+    }
   }
 
   @AfterClass public static void classTearDown() throws Exception {
