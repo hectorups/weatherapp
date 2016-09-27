@@ -136,7 +136,7 @@ public class SelectionActivity extends AppCompatActivity implements SelectionPre
       try {
         int input = Integer.parseInt(dest.toString() + source.toString());
         if (input <= 10 && input > 0) {
-          return "";
+          return String.valueOf(input);
         }
       } catch (NumberFormatException e) {
       }
