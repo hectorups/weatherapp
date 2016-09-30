@@ -18,8 +18,10 @@ import org.junit.runner.RunWith;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static com.example.hectormonserrate.weatherapp.OrientationChangeAction.orientationLandscape;
 import static org.hamcrest.Matchers.allOf;
 
 @RunWith(AndroidJUnit4.class) public class WeatherActivityTest {
@@ -45,6 +47,25 @@ import static org.hamcrest.Matchers.allOf;
         matches(isDisplayed()));
 
     onView(allOf(withId(R.id.tvLow), withText(forecast.low().celsius() + "°"))).check(
+        matches(isDisplayed()));
+  }
+
+  //onView(isRoot()).perform(orientationLandscape());
+
+  @Test public void weatherActivity_OrientationChange() {
+    Context targetContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+
+    final Forecast forecast = ForecastFactory.forecast();
+    Intent intent = WeatherActivity.buildIntent(targetContext, AutocompleteFactory.autocomplete(),
+        Collections.singletonList(forecast));
+
+    testRule.launchActivity(intent);
+
+    onView(isRoot()).perform(orientationLandscape());
+
+    onView(withId(R.id.vpPager)).check(matches(ViewPagerMatcher.withListSize(1)));
+
+    onView(allOf(withId(R.id.tvDescription), withText(forecast.conditions()))).check(
         matches(isDisplayed()));
   }
 }

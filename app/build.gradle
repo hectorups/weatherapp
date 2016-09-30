@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.uber.infer.android'
+apply plugin: 'jacoco-android'
 
 android {
   compileSdkVersion 24
@@ -31,6 +32,12 @@ android {
       signingConfig signingConfigs.release
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
+
+    debug {
+      applicationIdSuffix '.debug'
+      versionNameSuffix '-debug'
+      testCoverageEnabled (project.hasProperty('coverage') ? true : false)
+    }
   }
 
   lintOptions {
@@ -45,6 +52,17 @@ android {
     androidTest {
       java.srcDirs += "$projectDir/src/sharedTest"
     }
+  }
+}
+
+task grantAnimationPermission(type: Exec, dependsOn: 'installDebug') {
+  def adb = "$System.env.ANDROID_HOME/platform-tools/adb"
+  commandLine "$adb shell pm grant ${android.defaultConfig.applicationId}.debug android.permission.SET_ANIMATION_SCALE".split(' ')
+}
+
+tasks.whenTaskAdded { task ->
+  if (task.name.startsWith('connected')) {
+    task.dependsOn grantAnimationPermission
   }
 }
 
