@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.uber.infer.android'
 apply plugin: 'jacoco-android'
+apply plugin: 'spoon'
 
 android {
   compileSdkVersion 24
@@ -60,8 +61,12 @@ task grantAnimationPermission(type: Exec, dependsOn: 'installDebug') {
   commandLine "$adb shell pm grant ${android.defaultConfig.applicationId}.debug android.permission.SET_ANIMATION_SCALE".split(' ')
 }
 
+spoon {
+  debug true
+}
+
 tasks.whenTaskAdded { task ->
-  if (task.name.startsWith('connected')) {
+  if (task.name.startsWith('connected') || task.name.startsWith('spoon')) {
     task.dependsOn grantAnimationPermission
   }
 }
@@ -147,4 +152,5 @@ dependencies {
     exclude module: 'support-annotations'
     exclude module: 'support-v4'
   }
+  androidTestCompile 'com.squareup.spoon:spoon-client:1.6.4'
 }
